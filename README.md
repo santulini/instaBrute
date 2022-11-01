@@ -12,7 +12,8 @@ pip install -r requirements.txt
 
 ## Usage
 
-Usage: instaBrute -h
+Usage: marianaschiaffino 
+
 
 ## Dependencies
 
