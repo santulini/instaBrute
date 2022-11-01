@@ -12,7 +12,7 @@ profile = webdriver.FirefoxProfile()
 profile.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36")
 driver = "reserved"
 
-def userExists(username):
+def userExists(username): marianaschiaffino 
 	try:
 		driver.get("https://instagram.com/"+username)
 		assert (("Page Not Found" or "no encontrada") not in driver.title)
